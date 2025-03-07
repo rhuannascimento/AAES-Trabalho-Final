@@ -7,6 +7,15 @@ import java.util.Observer;
 
 public class Client implements Observer {
     private String lastNotification;
+    private String cnhNumber;
+    private String creditCardNumber;
+    private int age;
+
+    Client(String cnhNumber, String creditCardNumber, int age){
+        this.cnhNumber = cnhNumber;
+        this.creditCardNumber = creditCardNumber;
+        this.age = age;
+    }
 
     public void linkToRental(Rental rental) {
         if (rental instanceof Observable) {
@@ -21,5 +30,17 @@ public class Client implements Observer {
 
     public String getLastNotification() {
         return this.lastNotification;
+    }
+
+    public String getCnhNumber() {
+        return cnhNumber;
+    }
+
+    public String getCreditCardNumber() {
+        return creditCardNumber;
+    }
+
+    public int getAge() {
+        return age;
     }
 }
